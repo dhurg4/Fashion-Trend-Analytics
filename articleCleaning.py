@@ -13,7 +13,7 @@ nltk.data.path.append('/Users/dhurgadharani/nltk_data')
 
 
 # Load data from JSON file
-with open("/Users/dhurgadharani/Fashion/data/fashion_articles.json", mode='r') as file:
+with open("data/fashion_articles.json", mode='r') as file:
     dataList = json.load(file)
 
 #Put all article content into this list
@@ -42,7 +42,7 @@ def clean_text(text, fashion_terms):
     return cleaned_words
     
 # Function to export data to JSON
-def export_to_json(article_data, filename="/Users/dhurgadharani/Fashion/data/articles_frequencies.json"):
+def export_to_json(article_data, filename="data/articles_frequencies.json"):
     # Open the JSON file in write mode
     with open(filename, mode='w') as file:
         json.dump(article_data, file, indent=4, ensure_ascii=False)  # Write the data to the file
@@ -100,5 +100,5 @@ wordcloud = WordCloud(width=800, height=400, background_color="white").generate_
 plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
-wordcloud.to_file("/Users/dhurgadharani/Fashion/imgArticle/wordcloud.png") #Save the wordcloud for me later!!
+wordcloud.to_file("imgArticle/wordcloud.png") #Save the wordcloud for me later!!
 

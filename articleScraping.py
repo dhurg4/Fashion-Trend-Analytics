@@ -68,7 +68,7 @@ def get_article_data(url):
 
 
 # Function to export data to JSON
-def export_to_json(article_data, filename="/Users/dhurgadharani/Fashion/data/fashion_articles.json"):
+def export_to_json(article_data, filename="data/fashion_articles.json"):
     # Open the JSON file in write mode
     with open(filename, mode='w') as file:
         json.dump(article_data, file, indent=4, ensure_ascii=False)  # Write the data to the file

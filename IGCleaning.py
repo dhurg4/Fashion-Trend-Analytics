@@ -9,10 +9,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 # Path to NLTK resources bc for some reason I couldn't download them
-nltk.data.path.append('/Users/dhurgadharani/nltk_data')
+nltk.data.path.append('path/to/nltk_data')
 
 # Load data from JSON file
-with open("/Users/dhurgadharani/Fashion/data/IG_captions.json", mode='r') as file:
+with open("data/IG_captions.json", mode='r') as file:
     dataList = json.load(file)
 
 
@@ -43,7 +43,7 @@ def clean_text(text, fashion_terms):
     return cleaned_words #Return the cleaned words
     
 # Function to export data to JSON
-def export_to_json(caption_data, filename="/Users/dhurgadharani/Fashion/data/caption_frequencies.json"):
+def export_to_json(caption_data, filename="data/caption_frequencies.json"):
     with open(filename, mode='w') as file:
         json.dump(caption_data, file, indent=4, ensure_ascii=False)  # Write the data to the file
 
@@ -101,4 +101,4 @@ wordcloud = WordCloud(width=800, height=400, background_color="white").generate_
 plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
-wordcloud.to_file("/Users/dhurgadharani/Fashion/imgInstagram/wordcloud.png") #Save the word cloud
+wordcloud.to_file("imgInstagram/wordcloud.png") #Save the word cloud

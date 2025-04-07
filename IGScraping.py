@@ -21,9 +21,8 @@ def log_in():
     username = driver.find_element(By.NAME, "username")
     password = driver.find_element(By.NAME, "password")
 
-    #Hey! That's my username and password!
-    username.send_keys("dhurg4")
-    password.send_keys("blue-snake63")
+    username.send_keys("your username")
+    password.send_keys("your password")
     password.send_keys(Keys.RETURN)
 
     # Wait for login to complete
@@ -97,7 +96,7 @@ def get_post_data(tags):
         return all_data
 
 
-def export_to_json(all_data, filename = "/Users/dhurgadharani/Fashion/data/IG_captions.json"):
+def export_to_json(all_data, filename = "data/IG_captions.json"):
     # Open the JSON file in write mode
     with open(filename, mode='w') as file:
         json.dump(all_data, file, indent=4, ensure_ascii=False)  # Write the data to the file
